@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Frecuencia de Movimiento Armónico Simple</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cálculo de la frecuencia de un Sistema Movimiento Armónico Amortiguado</h1>
+
+        <label for="masa">Masa (kg):</label>
+        <input type="number" id="masa" required>
+
+        <label for="k">Constante de rigidez (N/m):</label>
+        <input type="number" id="k" required>
+
+        <label for="b">Constante de amortiguamiento (N s/m):</label>
+        <input type="number" id="b" required>
+
+        <button onclick="calcularFrecuencia()">Calcular Frecuencia</button>
+        <div id="resultado">
+            <p>Frecuencia:<span id="frecuencia"></span>Hz</p>
+            <p id="mensaje"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
