@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo de Frecuencia de Movimiento Armónico Simple</title>
+    <title>Cálculo de la Frecuencia de Movimiento Armónico Simple</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            margin: 20px;
+        }
+        #mensajeError {
+            color: red;
+            font-weight: bold;
+        }
+        #graficoPosicion, #graficoAmortiguado {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>Cálculo de la frecuencia de un Sistema Movimiento Armónico Amortiguado</h1>
-
+        <h1>Cálculo de la frecuencia de un Sistema de Movimiento Armónico Amortiguado</h1>
+ 
         <label for="masa">Masa (kg):</label>
         <input type="number" id="masa" required>
-
+ 
         <label for="k">Constante de rigidez (N/m):</label>
         <input type="number" id="k" required>
-
-        <label for="b">Constante de amortiguamiento (N s/m):</label>
+ 
+        <label for="b">Constante de amortiguamiento (N/s):</label>
         <input type="number" id="b" required>
+ 
+        <button onclick="calcularFrecuencia()">Calcular</button>
 
-        <button onclick="calcularFrecuencia()">Calcular Frecuencia</button>
+        <div id="mensajeError"></div>
+
         <div id="resultado">
-            <p>Frecuencia:<span id="frecuencia"></span>Hz</p>
+            <p>Frecuencia angular: <span id="frecuencia"></span> rad/s</p>
             <p id="mensaje"></p>
+            <p>Frecuencia angular amortiguada: <span id="amortiguado"></span> rad/s</p>
         </div>
-    </div>
-    <script src="script.js"></script>
-</body>
 
+        <canvas id="graficoSinAmortiguamiento"></canvas>
+        <canvas id="graficoAmortiguado"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
 </html>

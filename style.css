@@ -1,58 +1,116 @@
+/* Estilos generales */
 body {
-    font-family: arial, sans-serif;
-    background-color: #e6f4fd;
+    font-family: Arial, sans-serif;
+    background-color: #D4E4F7;  /* Pastel azul suave */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Contenedor principal */
 .container {
-    width: 300px;
-    margin: 100px auto;
+    width: 90%;  /* Usamos un porcentaje en lugar de un valor fijo */
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #ffffff;  /* Blanco para el contenedor */
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos */
 h1 {
     text-align: center;
-    color: #333;
+    font-size: 1.8em;  /* Tamaño más pequeño y adaptable */
+    color: #333;  /* Gris oscuro */
+    margin-bottom: 20px;
 }
 
+/* Etiquetas y campos de entrada */
 label {
+    font-size: 1em;
+    color: #555;  /* Gris suave */
     display: block;
     margin: 10px 0 5px;
-    color: #555;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-button {
+input[type="number"] {
     width: 100%;
     padding: 10px;
-    background-color: #6fd3cf;
+    font-size: 1em;  /* Tamaño de fuente más adecuado para dispositivos móviles */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input[type="number"]:focus {
+    border-color: #4CAF50;  /* Verde claro para el borde al enfocar */
+    outline: none;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6C88D1;  /* Azul suave para el botón */
     color: white;
+    font-size: 1.2em;  /* Tamaño de fuente más grande y visible */
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #a8dcd3;
+    background-color: #5A73A3;  /* Tono ligeramente más oscuro para el hover */
 }
 
+/* Sección de resultados */
 #resultado {
-    text-align: center;
     margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #resultado p {
-    font-size: 18px;
+    font-size: 1.1em;
     color: #333;
+    margin: 10px 0;
+}
+
+#mensaje {
+    font-weight: bold;
+    color: #d9534f;  /* Rojo para el mensaje de error */
+}
+
+/* Estilo de los gráficos */
+canvas {
+    margin-top: 30px;
+    width: 100% !important;
+    height: 300px !important;  /* Reducimos la altura para móviles */
+}
+
+/* Estilo de los contenedores de gráficos */
+#graficoPosicion, #graficoSinAmortiguamiento, #graficoAmortiguado {
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;  /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+
+    label, input[type="number"], button {
+        font-size: 1em;  /* Ajuste de tamaño de fuente */
+    }
+
+    #resultado p {
+        font-size: 1.1em;  /* Mejor legibilidad en pantallas pequeñas */
+    }
 }
